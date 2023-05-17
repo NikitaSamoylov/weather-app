@@ -1,11 +1,21 @@
-$primary-font: "Roboto-Regular";
-$medium-font: "Roboto-Medium";
-$bold-font: "Roboto-Bold";
-$content-width: 1170px;
+$primary-font: "Inter";
+$primary-font-weight: 400;
+$content-width: 1830px;
 $container-offset: 15px;
 $container-width: $content-width + ($container-offset * 2);
 
+// font-colors
+$search-user-color: #1f0e37;
+$search-result-item: rgba(255, 255, 255, 1);
+$main-info-title-color: rgba(255, 255, 255, 0.9);
+
 $bg-color-primary: rgb(102, 102, 162);
+// input search bg colors
+$input-blur-color: rgba(253, 253, 253, 0.7);
+$input-focus-color: rgba(253, 253, 253, 1);
 
 // breakpoints------
 $big-laptop: 1200px;
+
+// lines
+$search-result-line: rgba(255, 255, 255, 0.4);

@@ -8,6 +8,62 @@
     <link rel="shortcut icon" href="assets/img/ico.png">
 </head>
 <body>
-    
+    <div></div>
+    <div class="container">
+        <header class="header">
+            <p class="header__title">Nice Weather</p>
+            <div class="header__search main-search">
+                <ul class="main-search__list">
+                    <li class="main-search__item">москва</li>
+                    <li class="main-search__item">самара</li>
+                    <li class="main-search__item">спб</li>
+                    <li class="main-search__item">оренбург</li>
+                </ul>
+                <div class="main-search__input">
+                    <div class="main-input">
+                        <input type="text" class="main-input__search">
+                        <img src="assets/img/search-icon.png" alt="search" class="main-input__icon">
+                    </div>
+                    <ul class="main-input__result-list result-list">
+                        <li class="result-list__item">Курманаевка, Орловская область</li>
+                        <li class="result-list__item">Курманаевка, Верхнеусольский район, Свердловская область</li>
+                        <li class="result-list__item">Курманаевка, Верхнеусольский район, Свердловская область</li>
+                        <li class="result-list__item">Курманаевка, Верхнеусольский район, Свердловская область</li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <!-- -------------------------------------------------------------POPUP -->
+        <div class="search-popup">
+            <div class="header__search main-search">
+                <div class="main-search__input">
+                        <h2 class="main-search__title">Добавьте населенный пункт в закладки</h2>
+                    <div class="main-input">
+                        <input type="text" class="main-input__search">
+                        <img src="assets/img/add-icon.png" alt="search" class="main-input__icon popup-icon">
+                    </div>
+                    <ul class="main-input__result-list result-list">
+                        <li class="result-list__item">Курманаевка, Орловская область</li>
+                        <li class="result-list__item">Курманаевка, Верхнеусольский район, Свердловская область</li>
+                        <li class="result-list__item">Курманаевка, Верхнеусольский район, Свердловская область</li>
+                        <li class="result-list__item">Курманаевка, Верхнеусольский район, Свердловская область</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- ------------------------------------------------------------POPUP END -->
+        <main class="main">
+            <div class="main-info">
+                <h1 class="main-info__title">Москва</h1>
+                <div class="main-info__current current-info">
+                    <p class="current-info__value">+15&deg</p>
+                    <div class="current-info__selectors info-selectors">
+                        <p class="info-selectors__item info-selectors-now">сейчас</p>
+                        <p class="info-selectors__item info-selectors-today">сейчас</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 </body>
 </html>

@@ -1,0 +1,103 @@
+.main-search {
+    padding: 1.5rem 2.5rem 3.5rem 2.5rem;
+    background-color: rgba(9, 8, 67, 0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 2.5rem;
+
+    &__title {
+        font-size: 2rem;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 1.5rem;
+        padding-top: 1rem;
+    }
+    &__list {
+        display: flex;
+        margin-bottom: 1.5rem;
+        padding-left: 1.5rem;
+    }
+
+    &__item {
+        font-size: 1.6rem;
+        font-weight: 400;
+        margin-right: 2.7rem;
+        line-height: 0;
+
+        &::after {
+            content: url('assets/img/edit-icon.png');
+            width: 0.2rem;
+            height: 0.2rem;
+            margin-left: 1rem;
+            position: relative;
+            top: 0.3rem;
+            cursor: pointer;
+        }
+    }
+}
+
+.main-input {
+    position: relative;
+
+    &__search {
+        width: 48.7rem;
+        height: 4.1rem;
+        background-color: #fff;
+        border-radius: 2.5rem;
+        outline: none;
+        padding-left: 1.5rem;
+        font-size: 1.6rem;
+        background-color: $input-blur-color;
+        color: $search-user-color;
+        transition: 0.3s;
+    }
+
+    &__search:focus {
+        background-color: $input-focus-color;
+    }
+
+    &__icon {
+        position: absolute;
+        width: 2.5rem;
+        height: 2.5rem;
+        right: 2.2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+
+    &__result-list {
+        display: none;
+        padding-left: 1.5rem;
+    }
+}
+
+.result-list {
+    margin-top: 1.5rem;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        font-size: 1.4rem;
+        font: $search-result-item;
+    }
+
+    &__item:not(:last-child) {
+        margin-bottom: 1.5rem;
+    }
+
+    &__item::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        top: 1.9rem;
+        height: 0.1rem;
+        width: 0;
+        background-color: $search-result-line;
+        transition: .3s;
+    }
+
+    &__item:hover::after {
+        width: 97%;
+    }
+}
