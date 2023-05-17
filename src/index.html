@@ -54,12 +54,15 @@
         <!-- ------------------------------------------------------------POPUP END -->
         <main class="main">
             <div class="main-info">
-                <h1 class="main-info__title">Москва</h1>
+                <h1 class="main-info__title">москва</h1>
                 <div class="main-info__current current-info">
                     <p class="current-info__value">+15&deg</p>
                     <div class="current-info__selectors info-selectors">
-                        <p class="info-selectors__item info-selectors-now">сейчас</p>
-                        <p class="info-selectors__item info-selectors-today">сейчас</p>
+                        <div class="info-selectors__list">
+                            <p class="info-selectors__item info-selectors__item--active info-selectors__now">сейчас</p>
+                            <p class="info-selectors__item info-selectors__today">сегодня</p>
+                        </div>
+                        <img src="assets/img/cloudy-mockup.png" alt="weather icon" class="info-selectors__icon">
                     </div>
                 </div>
             </div>

@@ -1,0 +1,75 @@
+.main-info {
+
+    &__title {
+        font-size: 4.4rem;
+        line-height: 6.7rem;
+        color: rgba(255, 255, 255, 0.8);
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        margin-bottom: 4.5rem;
+    }
+}
+
+.current-info {
+    display: flex;
+    align-items: flex-start;
+
+    &__value {
+        font-size: 8em;
+    }
+    &__selectors {
+        margin-left: 2.5rem;
+    }
+}
+
+.info-selectors {
+
+    &__list {
+        display: flex;
+    }
+    &__item {
+        font-size: 2.6rem;
+        color: $font-color-not-active;
+        cursor: pointer;
+    }
+    &__item--active {
+        color: $font-color-active;
+        cursor: default;
+    }
+    &__now {
+        margin-right: 25px;
+    }
+    &__now::after {
+        content: "";
+        display: flex;
+        position: relative;
+        top: -26px;
+        left: 101px;
+        width: 0.2rem;
+        height: 2.5rem;
+        transform: rotate(20deg);
+        background-color: $search-result-line;
+    }
+    &__icon {
+        position: relative;
+        width: 48px;
+        top: -24px;
+        animation-name: weather-icon-anim;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        // animation-direction: alternate-reverse;
+        animation-fill-mode: both;
+    }
+}
+
+@keyframes weather-icon-anim {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(3rem);
+    }
+    100% {
+        transform: translateX(0rem);
+    }
+}
+

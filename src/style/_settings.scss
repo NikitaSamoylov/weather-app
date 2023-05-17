@@ -36,6 +36,11 @@ body {
     margin: 0 auto;
     padding: 2.4rem $container-offset 2.4rem $container-offset;
     max-width: $container-width;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100wh;
+    height: 100vh;
 }
 
 img {

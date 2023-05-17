@@ -8,6 +8,8 @@ $container-width: $content-width + ($container-offset * 2);
 $search-user-color: #1f0e37;
 $search-result-item: rgba(255, 255, 255, 1);
 $main-info-title-color: rgba(255, 255, 255, 0.9);
+$font-color-active: #fff;
+$font-color-not-active: rgba(255, 255, 255, 0.6);
 
 $bg-color-primary: rgb(102, 102, 162);
 // input search bg colors
