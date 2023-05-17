@@ -1,0 +1,11 @@
+$primary-font: "Roboto-Regular";
+$medium-font: "Roboto-Medium";
+$bold-font: "Roboto-Bold";
+$content-width: 1170px;
+$container-offset: 15px;
+$container-width: $content-width + ($container-offset * 2);
+
+$bg-color-primary: rgb(102, 102, 162);
+
+// breakpoints------
+$big-laptop: 1200px;
