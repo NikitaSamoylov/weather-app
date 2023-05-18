@@ -1,0 +1,81 @@
+.swiper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: 1.5rem;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -3.5rem;
+        width: 63rem;
+        height: 0.1rem;
+        border-bottom: 1px solid $search-result-line;
+    }
+    &__btn {
+        display: block;
+        width: 1.2rem;
+        height: 1.2rem;
+        transition: .3s;
+    }
+    &__btn::after {
+        content: '';
+        position: absolute;
+        width: 3.1rem;
+        height: 3.1rem;
+        top: -0.7rem;
+        left: -0.9rem;
+        border: 1px solid $search-result-line;
+        border-radius: 50%;
+        transition: .3s;
+    }
+    &__btn:hover::after {
+        background-color: rgba($color: #b5aaf6, $alpha: 0.4);
+        border-color: rgba($color: #b5aaf6, $alpha: 0.1);
+        z-index: -1;
+    }
+    &__prev-btn {
+        transform: translateX(-3.2rem);
+    }
+    &__next-btn {
+        position: relative;
+        left: 3.2rem;
+        transform: scale(-1, 1);
+    }
+}
+
+.swiper-wrapper {
+    display: flex;
+}
+
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .3s;
+    &__time {
+        font-size: 1.6rem;
+        color: $font-color-not-active;
+        margin-bottom: 0.5rem;
+    }
+    &__icon {
+        width: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+    &__temperature {
+        font-size: 1.6rem;
+        color: $font-color-active;
+        transform: translateX(-0.4rem);
+    }
+    &:not(:last-child) {
+        margin-right: 2rem;
+    }
+    &__icon > img {
+        display: block;
+        margin: 0 auto;
+    }
+    &:hover {
+        transform: scale(1.05);
+    }
+}

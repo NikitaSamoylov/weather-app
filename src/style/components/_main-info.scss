@@ -1,11 +1,21 @@
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
 .main-info {
+    margin-right: 6.5rem;
 
     &__title {
         font-size: 4.4rem;
         line-height: 6.7rem;
         color: rgba(255, 255, 255, 0.8);
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        margin-bottom: 4.5rem;
+        margin-bottom: 3rem;
+    }
+    &__current {
+        margin-bottom: 6.7rem;
     }
 }
 
@@ -27,7 +37,7 @@
         display: flex;
     }
     &__item {
-        font-size: 2.6rem;
+        font-size: 2.2rem;
         color: $font-color-not-active;
         cursor: pointer;
     }
@@ -42,9 +52,9 @@
         content: "";
         display: flex;
         position: relative;
-        top: -26px;
-        left: 101px;
-        width: 0.2rem;
+        top: -24px;
+        left: 88px;
+        width: 0.1rem;
         height: 2.5rem;
         transform: rotate(20deg);
         background-color: $search-result-line;
@@ -54,9 +64,8 @@
         width: 48px;
         top: -24px;
         animation-name: weather-icon-anim;
-        animation-duration: 4s;
+        animation-duration: 5s;
         animation-iteration-count: infinite;
-        // animation-direction: alternate-reverse;
         animation-fill-mode: both;
     }
 }

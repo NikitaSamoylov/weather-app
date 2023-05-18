@@ -1,0 +1,36 @@
+.current-info__tabs {
+    padding-left: 4.3rem;
+}
+
+.tabs-head {
+    display: flex;
+    font-size: 2.2rem;
+    color: $font-color-not-active;
+    cursor: pointer;
+
+    &__item {
+        line-height: 0;
+    }
+    &__item--active {
+        color: $font-color-active;
+        cursor: default;
+    }
+    &__item:not(:last-child) {
+        margin-right: 2.5rem;
+
+        &::after {
+            content: "";
+            display: flex;
+            position: relative;
+            top: -1rem;
+            left: 8.5rem;
+            height: 2.5rem;
+            width: 0.1rem;
+            transform: rotate(20deg);
+            background-color: $search-result-line;
+        }
+    }
+    &__item:first-child::after {
+        left: 10.1rem;
+    }
+}

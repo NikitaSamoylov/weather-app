@@ -1,0 +1,19 @@
+.additional-info {
+    width: 53.5rem;
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $search-result-line;
+        padding-bottom: 0.5rem;
+    }
+    &__item:not(:last-child) {
+        margin-bottom: 6.15rem;
+    }
+    &__item-item {
+        display: block;
+        font-size: 1.6rem;
+        padding-left: 3.9rem;
+        padding-right: 4.3rem;
+    }
+}
