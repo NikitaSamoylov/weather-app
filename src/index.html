@@ -8,48 +8,33 @@
     <link rel="shortcut icon" href="assets/img/ico.png">
 </head>
 <body>
-    <div></div>
+    <div class="darken"></div>
     <div class="container">
         <header class="header">
             <p class="header__title">Nice Weather</p>
             <div class="header__search main-search">
-                <ul class="main-search__list">
-                    <li class="main-search__item">москва</li>
-                    <li class="main-search__item">самара</li>
-                    <li class="main-search__item">спб</li>
-                    <li class="main-search__item">оренбург</li>
-                </ul>
+                <div class="main-search__container">
+                    <ul class="main-search__list">
+                        <li class="main-search__item">москва</li> <img src="assets/img/edit-icon.png" class="main-search__icon" alt="edit">
+                        <li class="main-search__item">самара</li> <img src="assets/img/edit-icon.png" class="main-search__icon" alt="edit">
+                        <li class="main-search__item">спб</li> <img src="assets/img/edit-icon.png" class="main-search__icon" alt="edit">
+                    </ul>
+                    <div class="main-search__add-tabs">
+                        <span class="main-search__item">добавьте населенный пункт в закладки</span>
+                        <img src="assets/img/returnArrow.png" alt="return" class="main-search__icon--return">
+                    </div>
+                </div>
                 <div class="main-search__input">
                     <div class="main-input">
                         <input type="text" class="main-input__search">
                         <img src="assets/img/search-icon.png" alt="search" class="main-input__icon">
                     </div>
+                    <span class="main-search--error"></span>
                     <ul class="main-input__result-list result-list">
-                        <li class="result-list__item">Курманаевка, Орловская область</li>
-                        <li class="result-list__item">Курманаевка, Верхнеусольский район, Свердловская область</li>
-                        <li class="result-list__item">Курманаевка, Верхнеусольский район, Свердловская область</li>
-                        <li class="result-list__item">Курманаевка, Верхнеусольский район, Свердловская область</li>
                     </ul>
                 </div>
             </div>
         </header>
-        <div class="search-popup">
-            <div class="header__search main-search">
-                <div class="main-search__input">
-                        <h2 class="main-search__title">Добавьте населенный пункт в закладки</h2>
-                    <div class="main-input">
-                        <input type="text" class="main-input__search">
-                        <img src="assets/img/add-icon.png" alt="search" class="main-input__icon popup-icon">
-                    </div>
-                    <ul class="main-input__result-list result-list">
-                        <li class="result-list__item">Курманаевка, Орловская область</li>
-                        <li class="result-list__item">Курманаевка, Верхнеусольский район, Свердловская область</li>
-                        <li class="result-list__item">Курманаевка, Верхнеусольский район, Свердловская область</li>
-                        <li class="result-list__item">Курманаевка, Верхнеусольский район, Свердловская область</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <main class="main">
             <div class="main-info">
                 <h1 class="main-info__title">москва</h1>

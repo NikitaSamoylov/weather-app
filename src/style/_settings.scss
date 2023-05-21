@@ -33,6 +33,7 @@ body {
 }
 
 .container {
+    position: relative;
     margin: 0 auto;
     padding: 3.4rem $container-offset 3.4rem $container-offset;
     max-width: $container-width;
@@ -126,4 +127,8 @@ input {
 
 .page--ios .dis-scroll {
     position: relative;
+}
+
+.darken {
+    transition: .3s;
 }

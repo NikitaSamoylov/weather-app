@@ -1,8 +1,13 @@
 .header {
+
+    &__search {
+        display: block;
+    }
     display: flex;
     justify-content: space-between;
+
+    &__title {
+    font-size: 2rem;
+    }
 }
 
-.header__title {
-    font-size: 2rem;
-}
