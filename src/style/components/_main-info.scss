@@ -13,6 +13,8 @@
         color: rgba(255, 255, 255, 0.8);
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         margin-bottom: 3rem;
+        transition: .3s;
+        opacity: 1;
     }
     &__current {
         margin-bottom: 6.7rem;

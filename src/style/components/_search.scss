@@ -23,12 +23,16 @@
         margin-bottom: 1.5rem;
         padding-left: 1.5rem;
         transition: .3s;
+        max-width: 487px;
     }
 
     &__item {
         font-size: 1.6rem;
         font-weight: 400;
         margin-right: 0.9rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
     }
     &__header {
         font-size: 1.6rem;
@@ -107,6 +111,7 @@
     display: block;
     transition: .3s;
     margin-top: 1.5rem;
+    height: 100%;
 
     &__item {
         display: flex;

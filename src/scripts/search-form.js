@@ -1,5 +1,6 @@
 import {getWeatherData, getLocation} from './requests';
 import { darkenBackground } from './darkenBackground';
+import { spinner } from './preloader';
 import './search-tabs';
 
 const searchField = document.querySelector('.main-input__search');
@@ -15,9 +16,10 @@ const resultListItem = resultList.children;
 let tabValue;
 
 
-const savedCitiesStorage = localStorage.getItem('tabsCities');
 
-if (savedCitiesStorage.length > 0) {
+
+if (localStorage.getItem('tabsCities') !== null) {
+    const savedCitiesStorage = localStorage.getItem('tabsCities');
     const savedCities = JSON.parse(savedCitiesStorage);
     let cityLat = [];
     let cityName = [];
@@ -26,7 +28,7 @@ if (savedCitiesStorage.length > 0) {
     tabsCities.forEach((el) => {
         currentCities.push(el)
     })
-    
+
     const savedCitiesArr = []
     savedCities.forEach((item) => {
         savedCitiesArr.push(item)
@@ -34,36 +36,30 @@ if (savedCitiesStorage.length > 0) {
     savedCitiesArr.forEach((city) => {
         cityLat.push(city.match(/  .{1,20}/))
         cityName.push(city.match(/[^\d\.\s]/gm).join('').replace(',', ''))
-        console.log(cityLat)
+    })
+   
+    cityName.forEach((el) => {
+        console.log(el)
     })
 
-  console.log(cityLat)
-
     for (let i = 0; i < currentCities.length; i++) {
-        let span1 = document.createElement('span');
-        span1.classList.add('main-search__lat');
-        span1.textContent = `  ${cityLat[0]}`;
-        let span2 = document.createElement('span');
-        span2.classList.add('main-search__lat');
-        span2.textContent = `  ${cityLat[1]}`;
-        let span3 = document.createElement('span');
-        span3.classList.add('main-search__lat');
-        span3.textContent = `  ${cityLat[2]}`;
-        currentCities[0].textContent = cityName[0]
-        currentCities[0].appendChild(span1)
-        currentCities[1].textContent = cityName[1]
-        currentCities[1].appendChild(span2)
-        currentCities[2].textContent = cityName[2]
-        currentCities[2].appendChild(span3)
-    };
-
-    const currentCitiesArr = [];
-    tabsCities.forEach(tab => {
-        currentCitiesArr.push(tab.textContent)
-    });
+    let span1 = document.createElement('span');
+    span1.classList.add('main-search__lat');
+    span1.textContent = `  ${cityLat[0]}`;
+    let span2 = document.createElement('span');
+    span2.classList.add('main-search__lat');
+    span2.textContent = `  ${cityLat[1]}`;
+    let span3 = document.createElement('span');
+    span3.classList.add('main-search__lat');
+    span3.textContent = `  ${cityLat[2]}`;
+    currentCities[0].textContent = cityName[0];
+    currentCities[0].appendChild(span1);
+    currentCities[1].textContent = cityName[1];
+    currentCities[1].appendChild(span2);
+    currentCities[2].textContent = cityName[2];
+    currentCities[2].appendChild(span3);
+}
 };
-
-
 
 editIcon.forEach((icon) => {
     icon.addEventListener('click', () => {
@@ -92,14 +88,14 @@ const returnMainForm = () => {
     setTimeout(() => {
         addTabsHeader.style.display = 'none';
     }, 300);
-}
+};
 
 returnIcon.addEventListener('click', () => {
     returnMainForm();
 });
 
-const renderData = (data) => {
-    data.forEach(el => {
+const renderData = (locationData) => {
+    locationData.forEach(el => {
         const li = document.createElement('li');
         li.classList.add('result-list__item');
         li.textContent = el.value.slice(0, 55) + '...' + ' ' + ' ';
@@ -138,13 +134,12 @@ searchField.addEventListener('input', () => {
         darkenBackground(1);
         hideIcons(0);
     }
-
     if (searchField.value.length >= 3) {
         removeResultList();
         getLocation(searchField)
             .then(res => {
             renderData(res);
-        });
+        })
     }
     else if (searchField.value === '') {
         removeResultList();
@@ -165,18 +160,21 @@ const changeTab = (tabText) => {
     tabValue.appendChild(span);
 
     let arrStorage = [];
-    tabsCities.forEach((tab, index) => {
-            arrStorage.push(tab.textContent)
-            // localStorage.setItem("tabsCities", arrStorage)
-        });
-        localStorage.setItem("tabsCities", JSON.stringify(arrStorage))
+    tabsCities.forEach((tab) => {
+        arrStorage.push(tab.textContent)
+    });
+    localStorage.setItem("tabsCities", JSON.stringify(arrStorage))
 };
 
 resultList.addEventListener('click', (evt) => {
     if (tabList.style.display != 'none') {
         const city = evt.target.textContent.match(/  .{1,20}/)[0].trim();
-        getWeatherData(city)
-            .then(res => {console.log(res)})
+        console.log(evt.target.textContent)
+        getWeatherData(city, evt.target.textContent)
+           spinner(1)
+           setTimeout(() => {
+            spinner(0)
+           }, 500)
     } else {
         changeTab(evt.target.textContent);
         returnMainForm();
@@ -200,7 +198,7 @@ document.addEventListener('keydown', (evt) => {
         darkenBackground(0);
         hideIcons(1);
         returnMainForm();
-    }
+    };
 });
 
 
