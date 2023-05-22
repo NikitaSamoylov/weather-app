@@ -14,12 +14,53 @@ const resultListItem = resultList.children;
 
 let tabValue;
 
-const savedCities = localStorage.getItem('tabsCities');
-const savedCitiesArr = Array.from(savedCities.split(','));
-for (let i = 0; i < tabsCities.length; i++) {
-    tabsCities[0].textContent = savedCitiesArr[0];
-    tabsCities[1].textContent = savedCitiesArr[1];
-    tabsCities[2].textContent = savedCitiesArr[2];
+
+const savedCitiesStorage = localStorage.getItem('tabsCities');
+
+if (savedCitiesStorage.length > 0) {
+    const savedCities = JSON.parse(savedCitiesStorage);
+    let cityLat = [];
+    let cityName = [];
+
+    const currentCities = [];
+    tabsCities.forEach((el) => {
+        currentCities.push(el)
+    })
+    
+    const savedCitiesArr = []
+    savedCities.forEach((item) => {
+        savedCitiesArr.push(item)
+    })
+    savedCitiesArr.forEach((city) => {
+        cityLat.push(city.match(/  .{1,20}/))
+        cityName.push(city.match(/[^\d\.\s]/gm).join('').replace(',', ''))
+        console.log(cityLat)
+    })
+
+  console.log(cityLat)
+
+    for (let i = 0; i < currentCities.length; i++) {
+        let span1 = document.createElement('span');
+        span1.classList.add('main-search__lat');
+        span1.textContent = `  ${cityLat[0]}`;
+        let span2 = document.createElement('span');
+        span2.classList.add('main-search__lat');
+        span2.textContent = `  ${cityLat[1]}`;
+        let span3 = document.createElement('span');
+        span3.classList.add('main-search__lat');
+        span3.textContent = `  ${cityLat[2]}`;
+        currentCities[0].textContent = cityName[0]
+        currentCities[0].appendChild(span1)
+        currentCities[1].textContent = cityName[1]
+        currentCities[1].appendChild(span2)
+        currentCities[2].textContent = cityName[2]
+        currentCities[2].appendChild(span3)
+    };
+
+    const currentCitiesArr = [];
+    tabsCities.forEach(tab => {
+        currentCitiesArr.push(tab.textContent)
+    });
 };
 
 
@@ -113,18 +154,22 @@ searchField.addEventListener('input', () => {
 });
 
 const changeTab = (tabText) => {
+    const lattitudeValue = tabText.match(/  .{1,20}/)[0].trim();
     const resultArr = Array.from(tabText.split(' '));
-    let locationValue = resultArr.slice(1, 2);
+    const locationValue = resultArr.slice(1, 2);
     tabValue.textContent = locationValue.join().replace(',', '').toLowerCase();
+
+    let span = document.createElement('span');
+    span.classList.add('main-search__lat');
+    span.textContent = `  ${lattitudeValue}`;
+    tabValue.appendChild(span);
 
     let arrStorage = [];
     tabsCities.forEach((tab, index) => {
-        if (index != 3) {
             arrStorage.push(tab.textContent)
-            localStorage.setItem("tabsCities", arrStorage)
-        }
-});
-
+            // localStorage.setItem("tabsCities", arrStorage)
+        });
+        localStorage.setItem("tabsCities", JSON.stringify(arrStorage))
 };
 
 resultList.addEventListener('click', (evt) => {

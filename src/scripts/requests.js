@@ -12,7 +12,11 @@ const getLocation = async (searchField) => {
 };
 
 const getWeatherData = async (city) => {
+    if (city == null) {
+        document.querySelector('.main-search--error').textContent = `данных нет. Попробуйте другой населенный пункт`;
+    }
     try {
+        console.log(city)
         const res = await fetch(`https://api.weatherapi.com/v1/current.json?key=2ba703d98b684941b17194908230805&q=${city}&aqi=no`);
         if (!res.ok) {
             throw new Error(console.log(res.message));

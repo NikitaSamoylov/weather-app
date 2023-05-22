@@ -28,11 +28,16 @@
     &__item {
         font-size: 1.6rem;
         font-weight: 400;
+        margin-right: 0.9rem;
+    }
+    &__header {
+        font-size: 1.6rem;
+        font-weight: 400;
         margin-right: 2.7rem;
     }
     &__icon {
         position: relative;
-        left: -20px;
+        left: -0.7rem;
         top: -6px;
         cursor: pointer;
         transition: .3s;
