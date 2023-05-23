@@ -1,10 +1,12 @@
 import { getWeatherData } from "./requests";
+import { spinner } from "./preloader";
 
 const tabsItems = document.querySelectorAll('.main-search__item');
 
 tabsItems.forEach((tab) => {
 
     tab.addEventListener('click', (e) => {
+        spinner(1)
         if (e.target.textContent == 'москва') {
             let span = document.createElement('span');
             span.classList.add('main-search__lat');
@@ -27,7 +29,6 @@ tabsItems.forEach((tab) => {
         const location = e.target.textContent.match(/  .{1,20}/)[0].trim();
         let cityData = 'город' + ' ' + e.target.textContent.match(/[^\d\.\,\s]/gm).join('') + ',';
         getWeatherData(location, cityData)
-        // .then(res => {console.log(res)});
     });
 });
 
