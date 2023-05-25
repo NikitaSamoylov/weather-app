@@ -15,9 +15,6 @@ const resultListItem = resultList.children;
 
 let tabValue;
 
-
-
-
 if (localStorage.getItem('tabsCities') !== null) {
     const savedCitiesStorage = localStorage.getItem('tabsCities');
     const savedCities = JSON.parse(savedCitiesStorage);
@@ -38,10 +35,6 @@ if (localStorage.getItem('tabsCities') !== null) {
         cityName.push(city.match(/[^\d\.\s]/gm).join('').replace(',', ''))
     })
    
-    cityName.forEach((el) => {
-        console.log(el)
-    })
-
     for (let i = 0; i < currentCities.length; i++) {
     let span1 = document.createElement('span');
     span1.classList.add('main-search__lat');
@@ -169,7 +162,6 @@ const changeTab = (tabText) => {
 resultList.addEventListener('click', (evt) => {
     if (tabList.style.display != 'none') {
         const city = evt.target.textContent.match(/  .{1,20}/)[0].trim();
-        console.log(evt.target.textContent)
         getWeatherData(city, evt.target.textContent)
            spinner(1)
            setTimeout(() => {

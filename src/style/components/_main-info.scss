@@ -8,6 +8,7 @@
     margin-right: 6.5rem;
 
     &__title {
+        padding-left: 5rem;
         font-size: 4.4rem;
         line-height: 6.7rem;
         color: rgba(255, 255, 255, 0.8);
@@ -24,6 +25,7 @@
 .current-info {
     display: flex;
     align-items: flex-start;
+    padding-left: 5rem;
 
     &__value {
         font-size: 8em;

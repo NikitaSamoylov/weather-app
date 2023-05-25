@@ -29,7 +29,7 @@ const getWeatherData = async (city, cityData='город Ростов-на-До�
     catch (error) {
         document.querySelector('.main-search--error').textContent = `ошибка ${error.message}. Перезагрузите страницу`;
     };
-    spinner(0);
+    // spinner(0);
 };
 const cityDefault = '47.2313500,39.7232800';
 getWeatherData(cityDefault);

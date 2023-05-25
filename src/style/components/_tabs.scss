@@ -4,16 +4,20 @@
 
 .tabs-head {
     display: flex;
+    padding-left: 2.4rem;
     font-size: 2.2rem;
     color: $font-color-not-active;
     cursor: pointer;
+    border-bottom: 1px solid $search-result-line;
 
     &__item {
         line-height: 0;
+        color: $font-color-not-active;
     }
     &__item--active {
         color: $font-color-active;
         cursor: default;
+        transition: .3s;
     }
     &__item:not(:last-child) {
         margin-right: 2.5rem;
@@ -33,4 +37,9 @@
     &__item:first-child::after {
         left: 10.1rem;
     }
+}
+
+.tabs-body__item {
+    display: flex;
+    align-items: center;
 }
