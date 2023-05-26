@@ -26,12 +26,16 @@
     display: flex;
     align-items: flex-start;
     padding-left: 5rem;
+    transition: 0.3s;
 
     &__value {
+        width: 13.9rem;
         font-size: 8em;
+        transition: .3s;
     }
     &__selectors {
         margin-left: 2.5rem;
+        transform: translateY(0.7rem);
     }
 }
 
@@ -39,29 +43,21 @@
 
     &__list {
         display: flex;
+        margin-bottom: 2rem;
     }
     &__item {
         font-size: 2.2rem;
         color: $font-color-not-active;
         cursor: pointer;
+        transition: 0.3s;
     }
     &__item--active {
         color: $font-color-active;
         cursor: default;
+        transition: 0.3s;
     }
-    &__now {
-        margin-right: 25px;
-    }
-    &__now::after {
-        content: "";
-        display: flex;
-        position: relative;
-        top: -24px;
-        left: 88px;
-        width: 0.1rem;
-        height: 2.5rem;
-        transform: rotate(20deg);
-        background-color: $search-result-line;
+    &__today {
+        margin-right: 1.1rem;
     }
     &__icon {
         position: relative;
@@ -71,6 +67,13 @@
         animation-duration: 5s;
         animation-iteration-count: infinite;
         animation-fill-mode: both;
+    }
+    &__divider {
+        width: 0.1rem;
+        height: 2.5rem;
+        transform: rotate(20deg);
+        background-color: $search-result-line;
+        margin-right: 1.1rem;
     }
 }
 

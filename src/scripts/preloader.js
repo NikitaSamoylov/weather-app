@@ -8,7 +8,7 @@
         </div>
         </br>
         <div class="preloader-notice">
-            Долгая загрузка. Перезагрузите страницу.
+            Долгий ответ от сервера. Перезагрузите страницу.
         </div>
         
         <style>
@@ -41,10 +41,10 @@
                      let b = document.querySelector('.preloader-notice')
                      b.style.display = 'block'
                  }
-            }, 10500)
+            }, 9500)
             setTimeout(() => {
                 clearTimeout(a)
-            }, 11000)
+            }, 10000)
 
         } else {
             let a = document.querySelector('.preloader');
@@ -58,14 +58,5 @@
             };
         };
     };
-//     const showNotice = setTimeout(() => {
-//     const notice = document.querySelector('.body').children
-//     notice.style.display = 'block'
-// }, 3000)
-//     setTimeout(() => {
-//         clearTimeout(showNotice)
-//     }, 4000)
 
-
-
-        export {spinner};
+export {spinner};
