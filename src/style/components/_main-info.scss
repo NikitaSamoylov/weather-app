@@ -89,3 +89,16 @@
     }
 }
 
+.anim {
+    animation: anim 0.8s cubic-bezier(.95, .05, .34, .92);
+}
+
+@keyframes anim {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+

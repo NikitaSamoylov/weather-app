@@ -1,5 +1,6 @@
 import { spinner } from "./preloader";
 import {renderAdditionalInfo} from './render-additional-info';
+import { addAnim } from "./add-anim-to-element";
 const locationMainName = document.querySelector('.main-info__title');
 const currentTempValue = document.querySelector('.current-info__value');
 const weatherMainIcon = document.querySelector('.info-selectors__icon');
@@ -7,6 +8,7 @@ const sliderTabs = document.querySelector('.tabs__head');
 const sliderTabsItems = document.querySelectorAll('.tabs-head__item');
 const weatherSelectorBtns = document.querySelectorAll('.info-selectors__item');
 const weatherSelectorToday = document.querySelector('.info-selectors__today');
+const anim = document.querySelector('.anim')
 
 const date = new Date();
 let mainResult;
@@ -90,7 +92,7 @@ const renderCurrentTemp = (result, dayIndex = 0) => {
         document.querySelector('.info-selectors__today').classList.add('info-selectors__item--active');
         currentTempValue.textContent = `${Math.ceil(result.forecast.forecastday[dayIndex].day.maxtemp_c)}°`
         weatherMainIcon.src = result.forecast.forecastday[dayIndex].day.condition.icon;
-        renderAdditionalInfo(result.forecast.forecastday[dayIndex]);
+        renderAdditionalInfo(result.forecast.forecastday[dayIndex].day);
     };
 };
 // ---------------------------------
@@ -123,6 +125,8 @@ sliderTabs.addEventListener('click', function(evt) {
 
 weatherSelectorBtns.forEach((selector) => {
     selector.addEventListener('click', (evt) => {
+        addAnim(currentTempValue);
+        document.querySelectorAll('.additional-info__value').forEach((el) => addAnim(el));
         weatherSelectorBtns.forEach((elem) => {
             elem.classList.remove('info-selectors__item--active');
         });
