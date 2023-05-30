@@ -1,8 +1,9 @@
+import { changeBackground } from "./background";
+
 const additionalInfoItem = document.querySelectorAll('.additional-info__value');
 
 const renderAdditionalInfo = (data) => {
-
-    console.log(data)
+   
     let isToday;
     const additionalInfoItemArr = [...additionalInfoItem];
     if (data.last_updated) {
@@ -18,6 +19,9 @@ const renderAdditionalInfo = (data) => {
         additionalInfoItemArr[3].textContent = data.condition.text;
 
     };
+
+    changeBackground(data);
+
 };
 
 export {renderAdditionalInfo};

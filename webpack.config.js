@@ -63,7 +63,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.(jpe?g|png|svg|gif|webp)$/i,
+                test: /\.(jpeg|jpg|png|svg|gif|webp)$/i,
                 use: [
                     {
                         loader: 'image-webpack-loader',
