@@ -21,7 +21,7 @@
                 align-items: center;
                 height: 100%;
                 width: 100%;
-                background-color: #08173885;
+                background-color: #42588a85;
                 backdrop-filter: blur(30px);
                 transition: .3s;
             }
@@ -46,7 +46,8 @@
                 clearTimeout(a)
             }, 10000)
 
-        } else {
+        } 
+        else {
             let a = document.querySelector('.preloader');
             if (a) {
                 setTimeout(() => {
@@ -59,4 +60,4 @@
         };
     };
 
-export {spinner};
+export {spinner}

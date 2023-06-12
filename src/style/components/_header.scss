@@ -3,11 +3,23 @@
     &__search {
         display: block;
     }
+
+    @include small-laptop {
+        display: block;
+    }
     display: flex;
     justify-content: space-between;
 
     &__title {
     font-size: 2rem;
+
+    @include small-laptop {
+        margin-bottom: 4.5rem;
+    }
+    }
+
+    @include small-laptop {
+        position: static;
     }
 }
 

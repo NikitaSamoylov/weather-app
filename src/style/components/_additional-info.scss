@@ -1,6 +1,15 @@
 .additional-info {
     width: 53.5rem;
 
+    @include landscape-tablet {
+        width: auto;
+    }
+
+    @include small-laptop {
+        margin: 0 auto;
+        max-width: 49.6rem;
+    }
+
     &__item {
         display: flex;
         justify-content: space-between;
@@ -10,11 +19,23 @@
     }
     &__item:not(:last-child) {
         margin-bottom: 6.15rem;
+
+        @include portreit-tablet {
+            margin-bottom: 4.15rem;
+        }
     }
     &__item-item {
         display: block;
         font-size: 1.6rem;
         padding-left: 3.9rem;
         padding-right: 4.3rem;
+        text-align: right;
+
+        @include portreit-tablet {
+            top: -2.8rem;
+            left: -6.7rem;
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 }

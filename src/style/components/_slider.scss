@@ -29,15 +29,36 @@
     }
     &__prev-btn {
         transform: translateX(-3.2rem);
+
+        @include landscape-tablet {
+            transform:translateX(2.8rem);
+        }
+        @include portreit-tablet {
+            transform: translateX(0);
+        }
     }
     &__next-btn {
         position: relative;
         left: 3.2rem;
         transform: scale(-1, 1);
+
+        @include landscape-tablet {
+            left: -2.9rem;
+        }
+        @include portreit-tablet {
+            left: 0;
+        }
     }
     &-wrapper {
         padding-top: 1.8rem;
         max-width: 63.2rem;
+
+        @include big-laptop {
+            max-width: 41.9rem;
+        }
+        @include landscape-tablet {
+            max-width: 26.3rem;
+        }
     }
 }
 
@@ -79,7 +100,7 @@
 }
 .swiper__prev-img {
     position: absolute;
-    left: 0;
+    left: 0.2rem;
 }
 .swiper__next-img {
     right: 0 !important;

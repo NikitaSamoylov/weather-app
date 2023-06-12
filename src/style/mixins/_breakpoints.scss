@@ -1,5 +1,29 @@
-@mixin big-desktop {
+@mixin big-laptop {
     @media (max-width: $big-laptop) {
+        @content;
+    }
+}
+
+@mixin small-laptop {
+    @media (max-width: $small-laptop) {
+        @content;
+    }
+}
+
+@mixin landscape-tablet {
+    @media (max-width: $landscape-tablet) {
+        @content;
+    }
+}
+
+@mixin portreit-tablet {
+    @media (max-width: $portreit-tablet) {
+        @content;
+    }
+}
+
+@mixin small-phone {
+    @media (max-width: $small-phone) {
         @content;
     }
 }

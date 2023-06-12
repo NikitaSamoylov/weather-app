@@ -1,11 +1,43 @@
+.body {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.body--day-rain {
+    background-image: url('assets/img/day-rain.jpg');
+}
+.body--night-rain {
+    background-image: url('assets/img/night-rain.jpg');
+}
+.body--day-sun {
+    background-image: url('assets/img/day-sun.jpg');
+    @include small-laptop {
+        background-image: url('assets/img/day-sun-tablet.jpg');
+    }
+}
+.body--night-sun {
+    background-image: url('assets/img/night-sun.jpg');
+}
+
 .main {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+
+    @include small-laptop {
+        display: block;
+        margin-bottom: 7.6rem;
+    }
+    @include portreit-tablet {
+        margin-bottom: 4.6rem !important;
+    }
 }
 
 .main-info {
     margin-right: 6.5rem;
+
+    @include small-laptop {
+        margin-right: 0 !important;
+    }
 
     &__title {
         padding-left: 5rem;
@@ -16,6 +48,13 @@
         margin-bottom: 3rem;
         transition: .3s;
         opacity: 1;
+
+        @include small-laptop {
+            text-align: center;
+            font-size: 3.6rem;
+            margin-bottom: 2.4rem;
+            padding-left: 0;
+        }
     }
     &__current {
         margin-bottom: 6.7rem;
@@ -28,14 +67,49 @@
     padding-left: 5rem;
     transition: 0.3s;
 
+    @include small-laptop {
+        padding-left: 0;
+    }
+    @include portreit-tablet {
+        margin-bottom: 4.6rem !important;
+    }
+
+    @include small-laptop {
+        justify-content: center;
+        margin-bottom: 7.6rem;
+    }
+    @include portreit-tablet {
+        flex-direction: column;
+        align-items: center;
+    }
+
     &__value {
         width: 13.9rem;
-        font-size: 8em;
+        font-size: 8rem;
         transition: .3s;
+
+        @include portreit-tablet {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
     }
     &__selectors {
         margin-left: 2.5rem;
         transform: translateY(0.7rem);
+
+        @include landscape-tablet {
+            margin-left: 1.2rem;
+        }
+        @include portreit-tablet {
+            margin-left: 0;
+        }
+    }
+    &__tabs {
+        @include small-laptop {
+            padding-left: 0 !important;
+            margin: 0 auto;
+            max-width: 47.4rem;
+        }
     }
 }
 
@@ -44,6 +118,10 @@
     &__list {
         display: flex;
         margin-bottom: 2rem;
+
+        @include portreit-tablet {
+            margin-bottom: 3rem;
+        }
     }
     &__item {
         font-size: 2.2rem;

@@ -1,4 +1,6 @@
-const body = document.querySelector('body');
+import { spinner } from "./preloader";
+
+const bodyElem = document.querySelector('.body')
 
 const date = new Date();
 let day;
@@ -9,17 +11,34 @@ else {
     day = false;
 };
 
+
 const changeBackground = (data) => {
-    const weather = Array.from(data.condition.text.split(' ')).forEach((item) => {
-        if (item == 'дождь') {
+      
+    Array.from(data.condition.text.split(' ')).forEach((item) => {
+        console.log(item)
+        bodyElem.classList.remove('body--day-rain', 'body--day-rain', 'body--night-rain', 'body--day-sun', 'body--night-sun');
+        
+        if (item.toLowerCase() == 'дождь' || item.toLowerCase() == 'ливень' || item.toLowerCase() == 'ливни') {
             if (day) {
-                body.style.backgroundImage  = 'url("./assets/day-rain.jpg")';
-            }
+            bodyElem.classList.add('body--day-rain')
+            } 
             else {
-                body.style.backgroundImage  = "url('./assets/img/night-rain.jpg')";
+                bodyElem.classList.add('body--night-rain')
             }
-        }
+        } 
+        else if (item.toLowerCase() == 'ясно' || item.toLowerCase() == 'солнечно' || item.toLowerCase() == 'морось' || item.toLowerCase() == 'облачно' || item.toLowerCase() == 'пасмурно' || item.toLowerCase() == 'дымка' || item.toLowerCase() == 'облачность' || item.toLowerCase() == 'туман') {
+            if (day) {
+                bodyElem.classList.add('body--day-sun')
+            } 
+            else {
+                bodyElem.classList.add('body--night-sun')
+            }
+        };
     });
+    
+    setTimeout(() => {
+      spinner(0);
+    }, 100)
 };
 
 export {changeBackground};

@@ -1,5 +1,9 @@
 .current-info__tabs {
     padding-left: 4.3rem;
+
+    @include small-laptop {
+        margin-bottom: 7.6rem;
+    }
 }
 
 .tabs-head {
@@ -9,6 +13,11 @@
     color: $font-color-not-active;
     cursor: pointer;
     border-bottom: 1px solid $search-result-line;
+
+    @include small-laptop {
+        justify-content: space-around;
+        padding-left: 0;
+    }
 
     &__item {
         line-height: 0;
@@ -22,6 +31,10 @@
     &__item:not(:last-child) {
         margin-right: 2.5rem;
 
+        @include small-laptop {
+            margin-right: 1.5rem;
+        }
+
         &::after {
             content: "";
             display: flex;
@@ -32,10 +45,21 @@
             width: 0.1rem;
             transform: rotate(20deg);
             background-color: $search-result-line;
+
+            @include small-laptop {
+                left: 10.3rem;
+            }
+            @include portreit-tablet {
+                opacity: 0;
+            }
         }
     }
     &__item:first-child::after {
         left: 10.1rem;
+
+        @include small-laptop {
+            left: 11.6rem;
+        }
     }
 }
 

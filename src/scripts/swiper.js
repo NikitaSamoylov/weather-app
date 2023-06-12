@@ -1,11 +1,12 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
-const swiper = new Swiper('.swiper', {
+
+let swiper = new Swiper('.swiper', {
   direction: 'horizontal',
   slidesPerView: 9,
   loop: false,
-  paginationClickable: false,
+  // paginationClickable: false,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
